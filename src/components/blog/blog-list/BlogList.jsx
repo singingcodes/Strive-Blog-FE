@@ -12,10 +12,13 @@ const BlogList = () => {
   }, [])
 
   const getData = async () => {
-    let response = await fetch("http://localhost:3001/blogPosts")
-    let data = await response.json()
-    console.log(data)
-    setPosts(data)
+    let response = await fetch("https://strive-blog-s.herokuapp.com/blogPosts/")
+    console.log(response)
+    if (response.ok) {
+      let data = await response.json()
+      console.log(data)
+      setPosts(data)
+    }
   }
 
   return (
