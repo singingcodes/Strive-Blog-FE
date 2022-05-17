@@ -12,8 +12,8 @@ const BlogList = () => {
   }, [])
 
   const getData = async () => {
-    let response = await fetch("https://strive-blog-s.herokuapp.com/blogPosts/")
-    console.log(response)
+    let response = await fetch("https://strive-blog-s.herokuapp.com/blogPosts")
+
     console.log(response)
     if (response.ok) {
       let data = await response.json()
